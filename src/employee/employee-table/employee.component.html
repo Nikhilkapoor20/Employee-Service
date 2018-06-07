@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>City</th>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>Postal Code</th>
+    </tr>
+    <tbody>
+      <tr *ngFor="let emp of employeeData">
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{isNumber(emp.phone)}}</td>
+        <td>{{emp.address.city}}</td>
+        <td>{{emp.address.address_line1}}</td>
+        <td>{{emp.address.address_line2}}</td>
+        <td>{{emp.address.postal_code}}</td>
+      </tr>
+    </tbody>
+</table>
