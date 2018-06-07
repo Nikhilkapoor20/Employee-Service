@@ -1,3 +1,5 @@
+<input type="text" name="term" [(ngModel)]="term" />
+
 <table class="table">
   <thead>
     <tr>
@@ -10,7 +12,7 @@
       <th>Postal Code</th>
     </tr>
     <tbody>
-      <tr *ngFor="let emp of employeeData">
+      <tr *ngFor="let emp of employeeData| Filter:term:'name'">
         <td>{{emp.id}}</td>
         <td>{{emp.name}}</td>
         <td>{{isNumber(emp.phone)}}</td>
