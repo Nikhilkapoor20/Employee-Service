@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class Filter implements PipeTransform {
 
   transform(input: any, args: any, cloumn: any): any {
-    debugger;
     const data = [];
     if (!input || !args) {
       return input;

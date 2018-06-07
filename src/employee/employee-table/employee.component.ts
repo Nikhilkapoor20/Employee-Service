@@ -1,46 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'emp-table',
   templateUrl: './employee.component.html',
 })
 
-export class EmployeeTable {
-  employeeData = [{
-    "id": 1,
-    "name": "Jhon",
-    "phone": "9999999999",
-    "address": {
-      "city": "Pune",
-      "address_line1": "ABC road",
-      "address_line2": "XYZ building",
-      "postal_code": "12455"
-    }
-  }, {
-    "id": 2,
-    "name": "Jacob",
-    "phone": "AZ99A99PQ9",
-    "address": {
-      "city": "Pune",
-      "address_line1":
-        "PQR road",
-      "address_line2": "ABC building",
-      "postal_code": "13455"
-    }
-  }, {
-    "id": 3,
-    "name": "Ari",
-    "phone": "145458522",
-    "address": {
-      "city": "Mumbai",
-      "address_line1": "ABC road",
-      "address_line2": "XYZ building",
-      "postal_code": "12455"
-    }
-  }];
+export class EmployeeTable implements OnInit {
+  employeeData: any = [];
+  constructor(public employeeService: EmployeeService) {
+  }
 
+  ngOnInit() {
+    this.employeeData = this.employeeService.getData();
+  }
   isNumber(data) {
-   data = Number(data);
-   return data !== data ? 'NA': data;
+    data = Number(data);
+    return data !== data ? 'NA' : data;
   }
 }

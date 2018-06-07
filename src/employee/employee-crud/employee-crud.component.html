@@ -1,0 +1,27 @@
+<form #form="ngForm" (ngSubmit)="submit(empDataByID)">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" minlength="4" id="name" [(ngModel)]="empDataByID.name"  name="name">
+  </div>
+  <div>
+    <label for="Phone ">Phone :</label>
+    <input type="number" id="phone" name="phone" [(ngModel)]="empDataByID.phone">
+  </div>
+  <div>
+    <label for="City">City :</label>
+    <input type="text" id="City" name="city" [(ngModel)]="empDataByID.address.city">
+  </div>
+  <div>
+    <label for="Address1">Address 1 :</label>
+    <input type="text" id="Address1" name="address_line1" [(ngModel)]="empDataByID.address.address_line1">
+  </div>
+  <div>
+    <label for="Address2">Address 2 :</label>
+    <input type="text" id="Address2" name="address_line2" [(ngModel)]="empDataByID.address.address_line2">
+  </div>
+  <div>
+    <label for="code">Postal Code :</label>
+    <input type="text" id="code" name="postal_code" [(ngModel)]="empDataByID.address.postal_code">
+  </div>
+  <button type="submit">Submit</button>
+</form>

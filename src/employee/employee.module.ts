@@ -5,6 +5,8 @@ import { EmployeeTable } from "./employee-table/employee.component";
 import { PagesComponent } from "./employee.component";
 import { CommonModule } from "@angular/common";
 import { Filter } from "../../filter.pipe";
+import { EmployeeCrud } from "./employee-crud/employee-crud.component";
+import { EmployeeService } from "./employee.service";
 
 @NgModule( {
     imports: [
@@ -16,7 +18,11 @@ import { Filter } from "../../filter.pipe";
       PagesComponent,
       EmployeeTable,
       Filter,
+      EmployeeCrud,
     ],
+    providers:[
+      EmployeeService,
+    ]
 } )
 
 export class EmployeeModule { }
